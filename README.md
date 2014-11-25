@@ -18,7 +18,9 @@ This application builds a simple stockticker for fetching and dislaying major st
 
 ##Server Setup
 Run the server as follows
-> python stockticker.py <MongoDB Server IP Address> <MongoDB Server Port Number>
+> python stockticker.py MongoDB_Server_IP_Address MongoDB_Server_Port_Number
+
+Where , MongoDB_Server_IP_Address is the IP address of the running MongoDB server instance and MongoDB_Server_Port_Number is the port number of that instance.
 
 If all goes well then you should see the console spring into action with index prices getting generated and populated in MongoDB 
 
