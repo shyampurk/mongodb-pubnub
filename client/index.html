@@ -123,49 +123,12 @@
             
                 $('#' + data['name']).html(data['value'])
 
-                //Update Delta Direction
-                if('+' == data['change'].charAt(0)) {
-
-                    if( $('#' + data['name'] + '-dir' ).hasClass('triangle-down')) {
-
-                        $('#' + data['name'] + '-dir' ).removeClass('triangle-down');
-                        $('#' + data['name'] + '-dir' ).addClass('triangle-up');
-
-                    }
-
-                    if(! $('#' + data['name'] + '-dir' ).hasClass('triangle-up')) {
-
-                        $('#' + data['name'] + '-dir' ).addClass('triangle-up');
-
-                    }
-
-
-                } else if ('-' == data['change'].charAt(0)) {
-
-                    if( $('#' + data['name'] + '-dir' ).hasClass('triangle-up')) {
-
-                        $('#' + data['name'] + '-dir' ).removeClass('triangle-up');
-                        $('#' + data['name'] + '-dir' ).addClass('triangle-down');
-
-                    }
-
-                    if(! $('#' + data['name'] + '-dir' ).hasClass('triangle-down')) {
-
-                        $('#' + data['name'] + '-dir' ).addClass('triangle-down');
-
-                    }
-
-                }
-                
-                //Update Delta Value
-                $('#' + data['name'] + '-delta' ).html(data['change'].substr(1));
+                displayDeltaDirectionArrow(data['name'],data['change']);
                 
                                 
             } else {
             
                 //Display state is currently set to Trend
-                    
-                
                 
                 //Set the Price and change value
                 $('#' + data['name'] + '-delta' ).html(data['value'] + '<br/>' + data['change'] )
@@ -302,45 +265,50 @@
 
         	$('#' + idx).html(price)
 
-                //Update Delta Direction
-                if('+' == delta.charAt(0)) {
-
-                    if( $('#' + idx + '-dir' ).hasClass('triangle-down')) {
-
-                        $('#' + idx + '-dir' ).removeClass('triangle-down');
-                        $('#' + idx + '-dir' ).addClass('triangle-up');
-
-                    }
-
-                    if(! $('#' + idx + '-dir' ).hasClass('triangle-up')) {
-
-                        $('#' + idx + '-dir' ).addClass('triangle-up');
-
-                    }
+            displayDeltaDirectionArrow(idx,delta);    
 
 
-                } else if ('-' == delta.charAt(0)) {
+        }
+        
+        var displayDeltaDirectionArrow = function(idx,delta){
+            
+            //Update Delta Direction
+            if('+' == delta.charAt(0)) {
 
-                    if( $('#' + idx + '-dir' ).hasClass('triangle-up')) {
+                if( $('#' + idx + '-dir' ).hasClass('triangle-down')) {
 
-                        $('#' + idx + '-dir' ).removeClass('triangle-up');
-                        $('#' + idx + '-dir' ).addClass('triangle-down');
+                    $('#' + idx + '-dir' ).removeClass('triangle-down');
+                    $('#' + idx + '-dir' ).addClass('triangle-up');
+                }
 
-                    }
+                if(! $('#' + idx + '-dir' ).hasClass('triangle-up')) {
 
-                    if(! $('#' + idx + '-dir' ).hasClass('triangle-down')) {
-
-                        $('#' + idx + '-dir' ).addClass('triangle-down');
-
-                    }
+                    $('#' + idx + '-dir' ).addClass('triangle-up');
 
                 }
-                
-                //Update Delta Value
-                $('#' + idx + '-delta' ).html(delta.substr(1));
-                
 
 
+            } else if ('-' == delta.charAt(0)) {
+
+                if( $('#' + idx + '-dir' ).hasClass('triangle-up')) {
+
+                    $('#' + idx + '-dir' ).removeClass('triangle-up');
+                    $('#' + idx + '-dir' ).addClass('triangle-down');
+
+                }
+
+                if(! $('#' + idx + '-dir' ).hasClass('triangle-down')) {
+
+                    $('#' + idx + '-dir' ).addClass('triangle-down');
+
+                }
+
+            }
+                
+            //Update Delta Value
+            $('#' + idx + '-delta' ).html(delta.substr(1));
+            
+            
         }
 
     	$( document ).ready(function() {
