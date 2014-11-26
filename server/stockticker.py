@@ -111,7 +111,8 @@ def startStockPicker(server,port):
 	#Setup index on time to fetch the latest update
 	coll.create_index([('time',DESCENDING)])
 
-	pubnub = Pubnub(publish_key="pub-c-d8f2a43e-160f-47e7-ab4c-2fbb2c848417",subscribe_key="sub-c-ee40292a-5fe7-11e4-8dc6-02ee2ddab7fe")
+	#YOUR PUBNUB KEYS - Replace the publish_key and subscriber_key below with your own keys
+	pubnub = Pubnub(publish_key="<your publish key>",subscribe_key="<your subscribe key>")
 
 	#Step 2 - Check and define the metadata ( index names )
 	metaDataInit(coll)
