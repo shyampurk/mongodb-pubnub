@@ -12,7 +12,7 @@ This application builds a simple stockticker for fetching and dislaying major st
 
 1. You will need a working MongoDB setup to run this application. You can get a free MongoDB cloud account through mms.mongodb.com
 2. You will need python2 installed on the server computer with pymongo and PubNub's Python SDK installed. Refer to the official docs of PyMongo and PubNub SDKs for installation instructions
-3. You will need a PubNub sandbox account to publish and subscribe your data
+3. You will need a PubNub sandbox account to publish and subscribe your data. You need to add your publish and subscribe key on the server and client program. Search for the string "YOUR PUBNUB KEYS" in the code to locate the line where you need to add the keys". For more details refer the PubNub SDK documention for Python and Javascript.
 
 
 #SETUP
