@@ -4,9 +4,9 @@ mongodb-pubnub
 MongoDB Integration with PubNub Data Stream
 
 #INTRODUCTION
-This application demonstrates the use of MongoDB database with PubNUb data stream. With the help of PubNub data stream SDKs we can stream the data fetched from MongoDB to remote users.
+This application demonstrates the use of MongoDB database with PubNub data stream. With the help of PubNub data stream SDKs we can stream the data fetched from MongoDB to remote users.
 
-This application builds a simple stockticker for fetching and dislaying major stock indices from the world. The application has two components.The server simulates a stock market feed and the PubNub broadcast server. The client runs as a front end web application for displaying the price counters and can also request a history trend.
+This application builds a simple stockticker for fetching and dislaying major stock indices from the world. The application has two components.The server simulates a stock market feed and implements the PubNub broadcast server. The client runs as a front end web application for displaying the price counters and historical price trends.
 
 #PRECONDITION
 
@@ -18,12 +18,12 @@ This application builds a simple stockticker for fetching and dislaying major st
 #SETUP
 
 ##Server Setup
-Open a console or terminal on the server and run the server program as follows ( Assumed that you are in the server directory)
+Open a console or terminal on the server and run the server program as follows ( Assuming that you are in the server directory)
 > python stockticker.py MongoDB_Server_IP_Address MongoDB_Server_Port_Number
 
 Where , MongoDB_Server_IP_Address is the IP address of the running MongoDB server instance and MongoDB_Server_Port_Number is the port number of that instance.
 
-Make sure that the MongoDB server is up and running and the IP address and Port is correct. If anyone of these is not in order then the server program will spew lots of errors on the console and eventually halt.   
+Make sure that the MongoDB server is up and running and the IP address and Port is correct. If anyone of these parameters is not in order then the server program will spew lots of errors on the console and eventually halt.   
 
 If all goes well then you should see the console spring into action with index prices getting generated and populated in MongoDB 
 
